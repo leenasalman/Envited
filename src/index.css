@@ -8,7 +8,7 @@ body {
   font-family: 'Helvetica', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #DDDDDD;;
+  background: linear-gradient(0deg, #F6F2FF, #F6F2FF), #FBFAFF;
 }
 .container {
   padding: 0;
