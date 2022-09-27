@@ -41,7 +41,7 @@ function Event({ response }) {
     <>
       <section className="event-section">
         <div className="container">
-          <div className="row flex-column flex-md-row">
+          <div className="row flex-column-reverse flex-md-row">
             <div className="col-md-6 col">
               <div className="event-details">
                 <h2 className="event-details__title">{response.title}</h2>
