@@ -1,29 +1,30 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import './CreateForm.css'
+import "./CreateForm.css";
 
 function CreateForm(props) {
-    const [details, setDetails] = useState({
-        name: "",
-        title: "",
-        startDate: "",
-        endDate: "",
-        streetName: "",
-        suburb: "",
-        state: "",
-        postcode: "",
-        link: "",
-      });
-      const handleChange = (e) => {
-        e.preventDefault();
-        setDetails((previousDeets) => {
-          return { ...previousDeets, [e.target.name]: e.target.value };
-        });
-      };
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        props.onSubmit(details);
-      }
+  const [details, setDetails] = useState({
+    name: "",
+    title: "",
+    startDate: "",
+    endDate: "",
+    streetName: "",
+    suburb: "",
+    state: "",
+    postcode: "",
+    link: "",
+  });
+  const handleChange = (e) => {
+    e.preventDefault();
+    setDetails((previousDeets) => {
+      return { ...previousDeets, [e.target.name]: e.target.value };
+    });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.onSubmit(details);
+  };
+  const today = new Date();
   return (
     <>
       <form className="form" onSubmit={handleSubmit}>
@@ -48,12 +49,14 @@ function CreateForm(props) {
           type="datetime-local"
           onChange={handleChange}
           name="startDate"
+          min={today}
         />
         <input
           className="form__input"
           type="datetime-local"
           onChange={handleChange}
           name="endDate"
+          min={today.setHours(23, 59, 59, 998)}
         />
         <input
           className="form__input"
