@@ -13,7 +13,7 @@ root.render(
 App.use(express.static(__dirname)); //here is important thing - no static directory, because all static :)
 
 App.get("/*", function(req, res) {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
